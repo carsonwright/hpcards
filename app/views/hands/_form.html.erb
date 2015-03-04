@@ -1,4 +1,4 @@
-<%= form_for(@hand) do |f| %>
+<%= form_for(@hand, html:{ class: "form-horizontal"}) do |f| %>
   <% if @hand.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@hand.errors.count, "error") %> prohibited this hand from being saved:</h2>
