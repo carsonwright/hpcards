@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hand.user_id %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @hand.card_id %>
+</p>
+
+<p>
+  <strong>Game:</strong>
+  <%= @hand.game_id %>
+</p>
+<%= link_to 'Edit', edit_hand_path(@hand) %> |
+<%= link_to 'Back', hands_path %>

@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Attr one</th>
+      <th>Attr two</th>
+      <th>Attr three</th>
+      <th>Attr four</th>
+      <th>Attr five</th>
+      <th>Attr six</th>
+      <th>Attr description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.name %></td>
+        <td><%= card.attr_one %></td>
+        <td><%= card.attr_two %></td>
+        <td><%= card.attr_three %></td>
+        <td><%= card.attr_four %></td>
+        <td><%= card.attr_five %></td>
+        <td><%= card.attr_six %></td>
+        <td><%= card.attr_description %></td>
+        <td><%= link_to 'Show', card %></td>
+        <td><%= link_to 'Edit', edit_card_path(card) %></td>
+        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Card', new_card_path %>

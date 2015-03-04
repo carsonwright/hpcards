@@ -1,0 +1,49 @@
+<%= form_for(@card) do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.collection_select(:deck_id, Deck.all, :id, :name) %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_one %><br>
+    <%= f.text_field :attr_one %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_two %><br>
+    <%= f.text_field :attr_two %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_three %><br>
+    <%= f.text_field :attr_three %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_four %><br>
+    <%= f.text_field :attr_four %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_five %><br>
+    <%= f.text_field :attr_five %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_six %><br>
+    <%= f.text_field :attr_six %>
+  </div>
+  <div class="field">
+    <%= f.label :attr_description %><br>
+    <%= f.text_area :attr_description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
