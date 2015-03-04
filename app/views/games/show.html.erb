@@ -28,10 +28,12 @@
 <% Deck.all.each do |deck| %>
 	<%= deck.styling %>
 <% end %>
-<h1>Your Cards</h1>
+</style>
+<h3>Your Cards</h3>
+
 <% @your_cards.each do |card| %>
-	<a href="/games/<%= @game.id%>/put_back/<%= card.id %>">
-		<div class="card <%= card.deck.name %>">
+	<a href="/games/<%= @game.id%>/put_back/<%= card.id %>" class="<%= card.deck.name %>">
+		<div class="card">
 			<h2 class="name"><%= card.name %></h2>
 			<div class="attr_one"><%= card.attr_one %></div>
 			<div class="attr_two"><%= card.attr_two %></div>
