@@ -15,6 +15,7 @@ class CardsController < ApplicationController
   # GET /cards/new
   def new
     @card = Card.new
+    @card.deck_id = params[:deck_id]
   end
 
   # GET /cards/1/edit

@@ -7,3 +7,7 @@
 
 <%= link_to 'Edit', edit_deck_path(@deck) %> |
 <%= link_to 'Back', decks_path %>
+<%= link_to 'New Card',  '/cards/new?deck_id=#{@deck.id}' %>
+<% @deck.cards.each do |card| %>
+  <%= card.name %>
+<% end %>

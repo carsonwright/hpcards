@@ -12,15 +12,8 @@
 <% @current_cards.each do |card| %>
 	<h3><%= Deck.find(card.deck_id).name.camelcase %></h3>
 	<a href="/games/<%= @game.id%>/pick_up/<%= card.id %>" class="<%= card.deck.name.downcase %>">
-		<div class="card">
-			<h2 class="name"><%= card.name %></h2>
-			<div class="attr_one"><%= card.attr_one %></div>
-			<div class="attr_two"><%= card.attr_two %></div>
-			<div class="attr_three"><%= card.attr_three %></div>
-			<div class="attr_four"><%= card.attr_four %></div>
-			<div class="attr_five"><%= card.attr_five %></div>
-			<div class="attr_six"><%= card.attr_six %></div>
-			<div class="attr_attr_description"><%= card.attr_description %></div>
+		<div class="card front">
+			<h2 class="name"><%= card.deck.name %></h2>
 		</div>
 	</a>
 <% end %>
@@ -33,7 +26,7 @@
 
 <% @your_cards.each do |card| %>
 	<a href="/games/<%= @game.id%>/put_back/<%= card.id %>" class="<%= card.deck.name.downcase %>">
-		<div class="card">
+		<div class="card back">
 			<h2 class="name"><%= card.name %></h2>
 			<div class="attr_one"><%= card.attr_one %></div>
 			<div class="attr_two"><%= card.attr_two %></div>
